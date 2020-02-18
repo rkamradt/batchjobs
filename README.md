@@ -1,1 +1,1 @@
-# batchjobs
+# Building images with Kaniko
