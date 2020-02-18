@@ -20,4 +20,4 @@ spec:
                   "--verbosity=debug",
                   "--cache=true",
                   "--insecure=true",
-                  "--destination=registry.container-registry:5000/helloworld:latest"]
+                  "--destination=registry.container-registry:5000/helloworld:latest"
