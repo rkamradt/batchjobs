@@ -1,0 +1,13 @@
+{
+  "name": "nodekube",
+  "version": "1.0.0",
+  "description": "kubectl script deployment to k8s",
+  "author": "Randal Kamradt <randysr@kamradtfamily.net>",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "kubernetes-client": "^8.3.6"
+  }
+}
