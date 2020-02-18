@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: build-image
+spec:
+  backoffLimit: 6 # number of retries before throwing error
+  activeDeadlineSeconds: 2400 # time to allow job to run
+  template:
+    metadata:
+      labels:
+        app: build-image
+        tier: job
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: build-image
+          image: gcr.io/kaniko-project/executor:v0.16.0
+          args: ["--context=git://github.com/rkamradt/batchjobs.git#refs/heads/master",
+                  "--dockerfile=DockerfileNodekube",
+                  "--verbosity=debug",
+                  "--cache=true",
+                  "--insecure=true",
+                  "--destination=registry.container-registry:5000/nodekube:latest"]
